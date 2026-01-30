@@ -34,64 +34,57 @@
   <li>Πλήρης ενσωμάτωση της φιλοσοφίας των ανοικτών τεχνολογιών για το κοινό καλό.</li>
 </ul>
 
-<h2>Υλικά – Τεχνολογίες</h2>
+Εδώ είναι ο κώδικας HTML για το ανανεωμένο σου κείμενο. Χρησιμοποίησα μια καθαρή δομή με λίστα και ενεργούς συνδέσμους για να είναι εύκολο στην ανάγνωση.
+HTML
 
-<ul>
-  <li>
-    ESP32-DevKitC Development Board – x1 – 9,9€<br>
-    <a href="https://grobotronics.com/esp32-development-board-devkit-v1.html" target="_blank">
-      https://grobotronics.com/esp32-development-board-devkit-v1.html
-    </a>
-  </li>
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Υλικά – Τεχνολογίες</title>
+</head>
+<body>
 
-  <li>
-    Αισθητήρας Υγρασίας &amp; Θερμοκρασίας DHT11 – x2 – 4,8€<br>
-    <a href="https://grobotronics.com/humidity-sensor-dht11-module.html" target="_blank">
-      https://grobotronics.com/humidity-sensor-dht11-module.html
-    </a>
-  </li>
+    <h2>Υλικά – Τεχνολογίες</h2>
 
-  <li>
-    Αισθητήρας Θερμοκρασίας DS18B20 Αδιάβροχος – x1 – 3,6€<br>
-    <a href="https://grobotronics.com/ds18b20-el.html" target="_blank">
-      https://grobotronics.com/ds18b20-el.html
-    </a>
-  </li>
+    <ul>
+        <li>
+            <strong>ESP32-DevKitC Development Board</strong> (x1) – 9,9€<br>
+            <a href="https://grobotronics.com/esp32-development-board-devkit-v1.html">Δείτε το προϊόν</a>
+        </li>
+        <li>
+            <strong>Αισθητήρας Υγρασίας & Θερμοκρασίας DHT11</strong> (x2) – 4,8€<br>
+            <a href="https://grobotronics.com/humidity-sensor-dht11-module.html">Δείτε το προϊόν</a>
+        </li>
+        <li>
+            <strong>Αισθητήρας Θερμοκρασίας DS18B20 Αδιάβροχος</strong> (x1) – 3,6€<br>
+            <a href="https://grobotronics.com/ds18b20-el.html">Δείτε το προϊόν</a>
+        </li>
+        <li>
+            <strong>Keyestudio EASY plug CCS811 CO2 module</strong> (x1) – 16€<br>
+            <a href="https://www.why.gr/%CE%BA%CE%B1%CF%84%CE%B1%CF%83%CF%84%CE%B7%CE%BC%CE%B1/open-hardware/keyestudio/keyestudio-easy-plug-ccs811-co2-module/">Δείτε το προϊόν</a>
+        </li>
+        <li>
+            <strong>LED Red Diffused 5mm & Resistor 200Ω</strong> (10pcs) – 0,8€<br>
+            <a href="https://grobotronics.com/led-5mm-diffused-red-and-200o-resistor-10pcs.html">Δείτε το προϊόν</a>
+        </li>
+        <li>
+            <strong>LED Green Diffused 5mm & Resistor 200Ω</strong> (10pcs) – 0,8€<br>
+            <a href="https://grobotronics.com/led-green-diffused-5mm-and-resistor-200o-10pcs.html">Δείτε το προϊόν</a>
+        </li>
+        <li>
+            <strong>Waveshare SG90 Micro Servo</strong> (x4) – 14,4€<br>
+            <a href="https://grobotronics.com/servo-micro-2.2kg.cm-plastic-gears-waveshare-sg90.html">Δείτε το προϊόν</a>
+        </li>
+        <li>
+            <strong>Κουτί Διακλάδωσης 157x95x40mm</strong> (x1) – 2€<br>
+            <a href="https://grobotronics.com/junction-box-157x95x40mm-pp-grey-ip54.html">Δείτε το προϊόν</a>
+        </li>
+    </ul>
 
-  <li>
-    Waveshare Αισθητήρας Μονοξειδίου Άνθρακα MQ-7 – x1 – 5,5€<br>
-    <a href="https://grobotronics.com/waveshare-mq-7-gas-sensor-module.html" target="_blank">
-      https://grobotronics.com/waveshare-mq-7-gas-sensor-module.html
-    </a>
-  </li>
-
-  <li>
-    LED Red Diffused 5mm &amp; Resistor 200Ω (10pcs) – x1 – 0,8€<br>
-    <a href="https://grobotronics.com/led-5mm-diffused-red-and-200o-resistor-10pcs.html" target="_blank">
-      https://grobotronics.com/led-5mm-diffused-red-and-200o-resistor-10pcs.html
-    </a>
-  </li>
-
-  <li>
-    LED Green Diffused 5mm &amp; Resistor 200Ω (10pcs) – x1 – 0,8€<br>
-    <a href="https://grobotronics.com/led-green-diffused-5mm-and-resistor-200o-10pcs.html" target="_blank">
-      https://grobotronics.com/led-green-diffused-5mm-and-resistor-200o-10pcs.html
-    </a>
-  </li>
-
-  <li>
-    Waveshare SG90 Micro Servo – 2.2kg·cm – x4 – 14,4€<br>
-    <a href="https://grobotronics.com/servo-micro-2.2kg.cm-plastic-gears-waveshare-sg90.html" target="_blank">
-      https://grobotronics.com/servo-micro-2.2kg.cm-plastic-gears-waveshare-sg90.html
-    </a>
-  </li>
-
-  <li>
-    Ανοικτό λογισμικό προγραμματισμού και πλατφόρμας δεδομένων (δωρεάν)
-  </li>
-</ul>
-
-<p><strong>Σύνολο:</strong> 40€</p>
+    <p><strong>Λογισμικό:</strong> Ανοικτό λογισμικό προγραμματισμού και πλατφόρμας δεδομένων (δωρεάν)</p>
+    
+    <p><strong>Σύνολο: 52,3€</strong></p>
 
 <h2>Πώς το έργο υπηρετεί το Κοινό Καλό</h2>
 <ul>
