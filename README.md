@@ -35,46 +35,43 @@
 </ul>
 
 <h2>Υλικά – Τεχνολογίες</h2>
-    <ul>
-        <li>
-            <strong>ESP32-DevKitC Development Board</strong> (x1) – 9,9€<br>
-            <a href="https://grobotronics.com/esp32-development-board-devkit-v1.html">Δείτε το προϊόν</a>
-        </li>
-        <li>
-            <strong>Αισθητήρας Υγρασίας & Θερμοκρασίας DHT11</strong> (x2) – 4,8€<br>
-            <a href="https://grobotronics.com/humidity-sensor-dht11-module.html">Δείτε το προϊόν</a>
-        </li>
-        <li>
-            <strong>Αισθητήρας Θερμοκρασίας DS18B20 Αδιάβροχος</strong> (x1) – 3,6€<br>
-            <a href="https://grobotronics.com/ds18b20-el.html">Δείτε το προϊόν</a>
-        </li>
-        <li>
-            <strong>Keyestudio EASY plug CCS811 CO2 module</strong> (x1) – 16€<br>
-            <a href="https://www.why.gr/%CE%BA%CE%B1%CF%84%CE%B1%CF%83%CF%84%CE%B7%CE%BC%CE%B1/open-hardware/keyestudio/keyestudio-easy-plug-ccs811-co2-module/">Δείτε το προϊόν</a>
-        </li>
-        <li>
-            <strong>LED Red Diffused 5mm & Resistor 200Ω</strong> (10pcs) – 0,8€<br>
-            <a href="https://grobotronics.com/led-5mm-diffused-red-and-200o-resistor-10pcs.html">Δείτε το προϊόν</a>
-        </li>
-        <li>
-            <strong>LED Green Diffused 5mm & Resistor 200Ω</strong> (10pcs) – 0,8€<br>
-            <a href="https://grobotronics.com/led-green-diffused-5mm-and-resistor-200o-10pcs.html">Δείτε το προϊόν</a>
-        </li>
-        <li>
-            <strong>Waveshare SG90 Micro Servo</strong> (x4) – 14,4€<br>
-            <a href="https://grobotronics.com/servo-micro-2.2kg.cm-plastic-gears-waveshare-sg90.html">Δείτε το προϊόν</a>
-        </li>
-        <li>
-            <strong>Κουτί Διακλάδωσης 157x95x40mm</strong> (x1) – 2€<br>
-            <a href="https://grobotronics.com/junction-box-157x95x40mm-pp-grey-ip54.html">Δείτε το προϊόν</a>
-        </li>
-    </ul>
-
-    <p><strong>Λογισμικό:</strong> Ανοικτό λογισμικό προγραμματισμού και πλατφόρμας δεδομένων (δωρεάν)</p>
+<ul>
+    <li>
+        <strong>ESP32-DevKitC Development Board</strong> (x1) – 9,9€<br>
+        <a href="https://grobotronics.com/esp32-development-board-devkit-v1.html">Δείτε το προϊόν</a>
+    </li>
+    <li>
+        <strong>Αισθητήρας Υγρασίας & Θερμοκρασίας DHT11</strong> (x2) – 4,8€<br>
+        <a href="https://grobotronics.com/humidity-sensor-dht11-module.html">Δείτε το προϊόν</a>
+    </li>
+    <li>
+        <strong>Αισθητήρας Θερμοκρασίας DS18B20 Αδιάβροχος</strong> (x1) – 3,6€<br>
+        <a href="https://grobotronics.com/ds18b20-el.html">Δείτε το προϊόν</a>
+    </li>
+    <li>
+        <strong>Keyestudio EASY plug CCS811 CO2 module</strong> (x1) – 16€<br>
+        <a href="https://www.why.gr/%CE%BA%CE%B1%CF%84%CE%B1%CF%83%CF%84%CE%B7%CE%BC%CE%B1/open-hardware/keyestudio/keyestudio-easy-plug-ccs811-co2-module/">Δείτε το προϊόν</a>
+    </li>
+    <li>
+        <strong>LED Red Diffused 5mm & Resistor 200Ω</strong> (10pcs) – 0,8€<br>
+        <a href="https://grobotronics.com/led-5mm-diffused-red-and-200o-resistor-10pcs.html">Δείτε το προϊόν</a>
+    </li>
+    <li>
+        <strong>LED Green Diffused 5mm & Resistor 200Ω</strong> (10pcs) – 0,8€<br>
+        <a href="https://grobotronics.com/led-green-diffused-5mm-and-resistor-200o-10pcs.html">Δείτε το προϊόν</a>
+    </li>
+    <li>
+        <strong>Waveshare SG90 Micro Servo</strong> (x4) – 14,4€<br>
+        <a href="https://grobotronics.com/servo-micro-2.2kg.cm-plastic-gears-waveshare-sg90.html">Δείτε το προϊόν</a>
+    </li>
+    <li>
+        <strong>Κουτί Διακλάδωσης 157x95x40mm</strong> (x1) – 2€<br>
+        <a href="https://grobotronics.com/junction-box-157x95x40mm-pp-grey-ip54.html">Δείτε το προϊόν</a>
+    </li>
+</ul>
+<p><strong>Λογισμικό:</strong> Ανοικτό λογισμικό προγραμματισμού και πλατφόρμας δεδομένων (δωρεάν)</p>
+<p><strong>Σύνολο: 52,3€</strong></p>
     
-    <p><strong>Σύνολο: 52,3€</strong></p>
-
-
 <h2>Πώς το έργο υπηρετεί το Κοινό Καλό</h2>
 <ul>
   <li>Προάγει τη βιώσιμη καλλιέργεια και τον σεβασμό στο περιβάλλον.</li>
