@@ -34,6 +34,65 @@
   <li>Πλήρης ενσωμάτωση της φιλοσοφίας των ανοικτών τεχνολογιών για το κοινό καλό.</li>
 </ul>
 
+<h2>Υλικά – Τεχνολογίες</h2>
+
+<ul>
+  <li>
+    ESP32-DevKitC Development Board – x1 – 9,9€<br>
+    <a href="https://grobotronics.com/esp32-development-board-devkit-v1.html" target="_blank">
+      https://grobotronics.com/esp32-development-board-devkit-v1.html
+    </a>
+  </li>
+
+  <li>
+    Αισθητήρας Υγρασίας &amp; Θερμοκρασίας DHT11 – x2 – 4,8€<br>
+    <a href="https://grobotronics.com/humidity-sensor-dht11-module.html" target="_blank">
+      https://grobotronics.com/humidity-sensor-dht11-module.html
+    </a>
+  </li>
+
+  <li>
+    Αισθητήρας Θερμοκρασίας DS18B20 Αδιάβροχος – x1 – 3,6€<br>
+    <a href="https://grobotronics.com/ds18b20-el.html" target="_blank">
+      https://grobotronics.com/ds18b20-el.html
+    </a>
+  </li>
+
+  <li>
+    Waveshare Αισθητήρας Μονοξειδίου Άνθρακα MQ-7 – x1 – 5,5€<br>
+    <a href="https://grobotronics.com/waveshare-mq-7-gas-sensor-module.html" target="_blank">
+      https://grobotronics.com/waveshare-mq-7-gas-sensor-module.html
+    </a>
+  </li>
+
+  <li>
+    LED Red Diffused 5mm &amp; Resistor 200Ω (10pcs) – x1 – 0,8€<br>
+    <a href="https://grobotronics.com/led-5mm-diffused-red-and-200o-resistor-10pcs.html" target="_blank">
+      https://grobotronics.com/led-5mm-diffused-red-and-200o-resistor-10pcs.html
+    </a>
+  </li>
+
+  <li>
+    LED Green Diffused 5mm &amp; Resistor 200Ω (10pcs) – x1 – 0,8€<br>
+    <a href="https://grobotronics.com/led-green-diffused-5mm-and-resistor-200o-10pcs.html" target="_blank">
+      https://grobotronics.com/led-green-diffused-5mm-and-resistor-200o-10pcs.html
+    </a>
+  </li>
+
+  <li>
+    Waveshare SG90 Micro Servo – 2.2kg·cm – x4 – 14,4€<br>
+    <a href="https://grobotronics.com/servo-micro-2.2kg.cm-plastic-gears-waveshare-sg90.html" target="_blank">
+      https://grobotronics.com/servo-micro-2.2kg.cm-plastic-gears-waveshare-sg90.html
+    </a>
+  </li>
+
+  <li>
+    Ανοικτό λογισμικό προγραμματισμού και πλατφόρμας δεδομένων (δωρεάν)
+  </li>
+</ul>
+
+<p><strong>Σύνολο:</strong> 40€</p>
+
 <h2>Πώς το έργο υπηρετεί το Κοινό Καλό</h2>
 <ul>
   <li>Προάγει τη βιώσιμη καλλιέργεια και τον σεβασμό στο περιβάλλον.</li>
