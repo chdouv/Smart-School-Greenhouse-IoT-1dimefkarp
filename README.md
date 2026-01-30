@@ -35,7 +35,6 @@
 </ul>
 
 <h2>Υλικά – Τεχνολογίες</h2>
-
     <ul>
         <li>
             <strong>ESP32-DevKitC Development Board</strong> (x1) – 9,9€<br>
