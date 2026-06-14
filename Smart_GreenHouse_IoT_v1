@@ -1,0 +1,243 @@
+// Smart GreenHouse IoT v1 - Έξυπνο Σχολικό Θερμοκήπιο IoT v1.0 
+// Charalampos Douvletis - chdouvletis@yahoo.com
+
+#include <WiFi.h>
+#include <ThingSpeak.h>
+#include <DHT.h>
+#include <OneWire.h>
+#include <DallasTemperature.h>
+#include <Adafruit_CCS811.h>
+#include <ESP32Servo.h>
+
+#define DHTPIN_INSIDE 15
+#define DHTPIN_OUTSIDE 2
+#define SERVO_PIN 13
+#define SOIL_PIN 34     
+#define ONE_WIRE_BUS 4
+
+#define LED_WATER 25
+#define LED_TEMP 26
+#define LED_CO2 27
+
+// Home Wifi
+const char* ssid = "XXXXXXXX";      // Wifi SSID
+const char* password = "XXXXXXXX";  // Wifi Password
+
+
+unsigned long sampleDelay = 900000;
+int soilThreshold = 2000;
+float tempThreshold = 30;
+int co2Threshold = 1000;
+
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature soilTemp(&oneWire);
+
+#define DHTTYPE DHT22
+DHT dhtInside(DHTPIN_INSIDE, DHTTYPE);
+DHT dhtOutside(DHTPIN_OUTSIDE, DHTTYPE);
+
+WiFiClient client;
+
+unsigned long channelID = 1627279;
+const char* writeAPI = "XXXXXXXX";  // ThingSpeak API Key
+
+Adafruit_CCS811 ccs;
+
+Servo indicatorServo;
+
+void setup() {
+
+  Serial.begin(115200);
+
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.print("Connecting WiFi SSID ");
+    Serial.println(ssid);
+  }
+
+  if(WiFi.status() == WL_CONNECTED) {
+    Serial.print("WiFi connected - ");
+    Serial.println(ssid);
+  }
+  else 
+  {
+    Serial.println("WiFi NOT connected - ");
+    Serial.println(ssid);
+  }
+
+  // set the ADC attenuation to 11 dB (up to ~3.3V input)  
+  analogSetAttenuation(ADC_11db);
+
+  ThingSpeak.begin(client);
+
+  dhtInside.begin();
+  dhtOutside.begin();
+
+  soilTemp.begin();
+
+  if (!ccs.begin()) {
+    Serial.println("CCS811 sensor error");
+    while (1)
+      ;
+  }
+
+  while (!ccs.available())
+    ;
+
+  pinMode(LED_WATER, OUTPUT);
+  pinMode(LED_TEMP, OUTPUT);
+  pinMode(LED_CO2, OUTPUT);
+
+  indicatorServo.attach(SERVO_PIN);
+  Serial.println("----- GREENHOUSE INDICATOR TEST -----");  
+  Serial.print("Servo: ");
+  Serial.print(" 10 ");
+  indicatorServo.write(10);
+  delay(1000);
+  Serial.print(" 45 ");
+  indicatorServo.write(45);
+  delay(1000);
+  Serial.print(" 90 ");
+  indicatorServo.write(90);
+  delay(1000);
+  Serial.print(" 135 ");
+  indicatorServo.write(135);
+  delay(1000);
+  Serial.print(" 170 ");
+  indicatorServo.write(170);
+  delay(1000);
+  Serial.println(" end.");
+
+  Serial.print("Leds: ");
+  Serial.print(" Water ");
+  digitalWrite(LED_WATER, HIGH);
+  digitalWrite(LED_CO2, LOW);
+  digitalWrite(LED_TEMP, LOW);
+  delay(1000);
+  Serial.print(" CO2 ");
+  digitalWrite(LED_WATER, LOW);
+  digitalWrite(LED_CO2, HIGH);
+  digitalWrite(LED_TEMP, LOW);
+  delay(1000);
+  Serial.print(" TEMP ");
+  digitalWrite(LED_WATER, LOW);
+  digitalWrite(LED_CO2, LOW);
+  digitalWrite(LED_TEMP, HIGH);
+  delay(1000);
+  Serial.println(" end.");
+
+  // Reser Indicators
+  digitalWrite(LED_WATER, LOW);
+  digitalWrite(LED_TEMP, LOW);
+  digitalWrite(LED_CO2, LOW);
+  indicatorServo.write(90);
+}
+
+void loop() {
+  float tempInside = dhtInside.readTemperature();
+  float humInside = dhtInside.readHumidity();
+
+  float tempOutside = dhtOutside.readTemperature();
+  float humOutside = dhtOutside.readHumidity();
+
+  soilTemp.requestTemperatures();
+  float soilTemperature = soilTemp.getTempCByIndex(0);
+
+  int soilMoisture = analogRead(SOIL_PIN);
+
+  int co2 = 0;
+
+  if (ccs.available()) {
+    if (!ccs.readData()) {
+      co2 = ccs.geteCO2();
+    }
+  }
+
+  Serial.println("----- GREENHOUSE DATA -----");
+
+  Serial.print("Temp Inside:\t\t");
+  Serial.print(tempInside);
+  Serial.print(" / ");
+  Serial.println(tempThreshold);
+  
+  Serial.print("Hum Inside:\t\t");
+  Serial.println(humInside);
+ 
+  Serial.print("Temp Outside:\t\t");
+  Serial.println(tempOutside);
+
+  Serial.print("Hum Outside:\t\t");
+  Serial.println(humOutside);
+
+  Serial.print("Soil Moisture:\t\t");
+  Serial.print(soilMoisture);
+  Serial.print(" / ");
+  Serial.println(soilThreshold);
+  
+  Serial.print("Soil Temp:\t\t");
+  Serial.println(soilTemperature);
+
+  Serial.print("CO2 ppm:\t\t");
+  Serial.print(co2);
+  Serial.print(" / ");
+  Serial.println(co2Threshold);
+
+  Serial.println("----- INDICATORS -----");
+  if (soilMoisture > soilThreshold) {
+    digitalWrite(LED_WATER, HIGH);
+    Serial.println("Soil Moisture Indicator ON");
+  } else {
+    digitalWrite(LED_WATER, LOW);
+    Serial.println("Soil Moisture Indicator\tOFF");
+  }
+    if (co2 > co2Threshold) {
+    digitalWrite(LED_CO2, HIGH);
+    Serial.println("CO2 Indicator\t\tON");
+  } else {
+    digitalWrite(LED_CO2, LOW);
+    Serial.println("CO2 Indicator\t\tOFF");
+  }
+  if (tempInside > tempThreshold) {
+    digitalWrite(LED_TEMP, HIGH);
+    Serial.println("Temperature Inside Indicator\tON");
+  } else {
+    digitalWrite(LED_TEMP, LOW);
+    Serial.println("Temp Inside Indicator\tOFF");
+  }
+
+  if (soilMoisture > soilThreshold) {
+    Serial.println("Arrow Indicator:\tWater Plants - 45");
+    indicatorServo.write(45);
+    delay(1000);
+  }
+  else if(tempInside > tempThreshold && co2 > co2Threshold) {
+    Serial.println("Arrow Indicator:\tVendilate - 135");
+    indicatorServo.write(135);
+    delay(1000);
+  }
+  else {
+    Serial.println("Arrow Indicator:\tOK - 90");
+    indicatorServo.write(90);
+    delay(1000);
+  }
+
+  if(WiFi.status() == WL_CONNECTED) {
+    ThingSpeak.setField(1, tempInside);
+    ThingSpeak.setField(2, humInside);
+    ThingSpeak.setField(3, tempOutside);
+    ThingSpeak.setField(4, humOutside);
+    ThingSpeak.setField(5, soilMoisture);
+    ThingSpeak.setField(6, soilTemperature);
+    ThingSpeak.setField(7, co2);
+    ThingSpeak.writeFields(channelID, writeAPI);
+    Serial.println("Data sent to ThingSpeak Channel");
+  }
+  else {
+    Serial.println("Data NOT sent to ThingSpeak Channel, no connection!");
+  }
+  Serial.println();
+  Serial.println();
+
+  delay(sampleDelay);
+}
